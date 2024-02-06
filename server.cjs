@@ -13,9 +13,11 @@ connectToDb(function(error) {
         console.log('Could not establish connection...')
         console.log(error)
     } else { // if no error in establishing connection
+        // process.evn.PORT : cloud Service
+        const port = process.env.PORT || 8000
         app.listen(8000)
         db = getDb()
-        console.log('Listening on port 8000...')
+        console.log(`listening on ${port}...`)
     }
 })
 
